@@ -1,6 +1,5 @@
 import pygame
 import hero as Hero
-import traps
 class Road():
     """
     Класс для создания блоков дороги,
@@ -30,13 +29,11 @@ class Road():
         self.road.centerx=900
         self.road.centery=y
         self.image_chek=1
-    def Draw(self, hero):
+    def Draw(self):
         """
         Отрисовка дороги снизу экрана
-        :param hero:игровой пресонаж
         :return: None
         """
-        #self.hero=Hero(self.screen)
         self.screen.blit(self.image,self.road)
         if(self.road.centery==750):
             self.image=self.image1
@@ -53,13 +50,11 @@ class Road():
         if self.road.centerx==-50:
             self.road.centerx=1250
             self.road.centery=750
-    def UP_Draw(self, hero):
+    def UP_Draw(self):
         """
         Отрисовка дороги сверху экрана
-        :param hero:игровой персонаж
         :return: None
         """
-        #self.hero=Hero(self.screen)
         self.screen.blit(self.image,self.road)
         if(self.image_chek==1):
             self.image=self.up_image1

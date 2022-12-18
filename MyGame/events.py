@@ -39,10 +39,8 @@ def event(hero):
                     hero.hero_up=False
                     hero.ship_kef=1
                 if hero.hero_sprite=="deafolt":
-                    #if(hero.onRoad==False):
                         hero.hero_jump=False
                 if hero.hero_sprite=="flip":
-                    #if(hero.onRoad==False):
                         hero.hero_jump=False
         elif event.type==pygame.MOUSEBUTTONDOWN:
             if event.button==1:

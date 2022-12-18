@@ -1,7 +1,6 @@
 import pygame
 
 import hero as HERO
-import sys
 class Spike():
     """
     Класс для создания шипов,

@@ -1,6 +1,4 @@
 import pygame,events
-
-import road
 import  hero as HERO
 from road import Road, BackGround
 import  traps
@@ -32,7 +30,6 @@ def run():
     hero=HERO.Hero(screen)
     ship_portal=Portal(screen,0)
     HERO.meters=13
-    road_i=0
     meters_i=0
     up_meters_i=0
     spikes_i=0
@@ -95,14 +92,13 @@ def run():
         for i in range(13):
             spikes_arr[i].Draw(hero)
             up_spikes_arr[i].Draw(hero)
-            road_arr_0[i].Draw(hero)
-            road_arr_1[i].UP_Draw(hero)
+            road_arr_0[i].Draw()
+            road_arr_1[i].UP_Draw()
         ship_portal.Draw_left(hero,HERO.meters)
         hero.Draw()
         ship_portal.Draw_right(HERO.meters)
         pygame.display.flip()
         hero.Rotate()
-    #print(HERO.finish)
     if(HERO.finish==False):
         run()
     start()
@@ -121,7 +117,6 @@ def start():
     menu=StartMenu(screen)
     bg_color=(255,255,255)
     hero=HERO.Hero(screen)
-    onMouse=hero.onMouse
     start_button=Button(screen)
     start_button.button.centerx,start_button.button.centery=600,450
     while start_button.startgame == False:

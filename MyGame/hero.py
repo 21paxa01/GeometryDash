@@ -20,7 +20,6 @@ class Hero():
         self.hero=self.image.get_rect()
         self.screen_rect=screen.get_rect()
         self.hero.centery=self.screen_rect.centery
-        self.hero.bottom=self.screen_rect.bottom
         self.hero.centerx=200
         self.hero.centery=650
         self.hero_up=False
@@ -183,6 +182,7 @@ class Hero():
         (-1)-персонаж врезался в обьект(поражение)
         0-персонаж не на дороге.
         1-персонаж на дороге
+        3-уровень пройден
         """
         if self.hero_sprite=="deafolt":
             if meters > 552:

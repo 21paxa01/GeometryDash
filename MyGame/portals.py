@@ -34,7 +34,7 @@ class Portal():
         self.left_image = pygame.image.load(images[self.meters_i*2])
         if(meters>=meters_arr[self.meters_i]):
             self.screen.blit(self.left_image,self.portal_left)
-            self.portal_left.centerx-=5
+            self.portal_left.centerx-=10
             if hero.hero.centerx>self.portal_left.centerx:
                 if(self.meters_i==0 and hero.hero_sprite=='deafolt'):
                     hero.Ship()
@@ -65,4 +65,4 @@ class Portal():
         self.right_image=pygame.image.load(images[self.meters_i*2+1])
         if(meters>=meters_arr[self.meters_i]):
             self.screen.blit(self.right_image,self.portal_right)
-            self.portal_right.centerx-=5
+            self.portal_right.centerx-=10

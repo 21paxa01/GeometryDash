@@ -44,7 +44,7 @@ class Road():
         elif(self.road.centery==450):
             self.image=self.image4
         if self.road.centerx>-50 :
-            self.road.centerx-=5
+            self.road.centerx-=10
         if(self.road.centerx==0):
             Hero.meters+=1
         if self.road.centerx==-50:
@@ -65,7 +65,7 @@ class Road():
         elif(self.image_chek==4):
             self.image=self.up_image4
         if self.road.centerx>-50 :
-            self.road.centerx-=5
+            self.road.centerx-=10
         if self.road.centerx==-50:
             self.road.centerx=1250
             self.image_chek=1

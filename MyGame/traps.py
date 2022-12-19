@@ -28,7 +28,7 @@ class Spike():
         :return: None
         """
         self.screen.blit(self.image,self.spike)
-        self.spike.centerx-=5
+        self.spike.centerx-=10
         if self.spike.centerx==-50 :
             self.spike.centerx=1250
             if self.up==False:

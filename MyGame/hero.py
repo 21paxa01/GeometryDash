@@ -51,18 +51,18 @@ class Hero():
         :return: None
         """
         if self.hero_sprite=="ship":
-            self.hero.centery -= 2 * (self.ship_angle/10)
+            self.hero.centery -= 4 * (self.ship_angle/10)
         if self.hero_sprite=="deafolt":
             if self.hero_jump==False and self.hero_jump_chek==0 and onRoad==False:
-                self.hero.centery+=5
+                self.hero.centery+=10
         if self.hero_sprite=="flip":
             if self.hero_jump==False and self.hero_jump_chek==0 and onRoad==False:
-                self.hero.centery-=5
+                self.hero.centery-=10
         if self.hero_sprite=="ball":
             if self.hero_up==True and underRoad==False:
-                self.hero.centery-=7.5
+                self.hero.centery-=15
             elif self.hero_up==False and onRoad==False:
-                self.hero.centery+=7.5
+                self.hero.centery+=15
     def Ship(self):
         """
         Переход в лежим летающего корабля.
@@ -111,30 +111,30 @@ class Hero():
         if self.hero_sprite=="deafolt":
             self.image=pygame.transform.rotate(self.rotate_image,self.angle)
             if onRoad==False:
-                self.angle-=2
+                self.angle-=4
             if onRoad==True:
                 self.angle-=self.angle%90
         if self.hero_sprite=="flip":
             self.image = pygame.transform.rotate(self.rotate_image, self.angle)
             if onRoad == False:
-                self.angle += 2
+                self.angle += 4
             if onRoad == True:
                 self.angle -= self.angle % 90
         if self.hero_sprite=="ship":
             if(onRoad==False and underRoad==False):
                 if self.hero_up==True and self.ship_angle<30 and underRoad == False:
-                    self.ship_angle+=0.5
+                    self.ship_angle+=1
                 elif self.hero_up==False and self.ship_angle>-30 and onRoad==False:
-                    self.ship_angle-=0.5
+                    self.ship_angle-=1
             if(onRoad==True or underRoad==True):
                 self.ship_angle=0
             self.image=pygame.transform.rotate(self.ship_rotate_image,self.ship_angle)
         if self.hero_sprite=="ball":
             self.image = pygame.transform.rotate(self.rotate_image, self.angle)
             if self.hero_up==True:
-                self.angle+=4
+                self.angle+=8
             else:
-                self.angle-=4
+                self.angle-=8
         self.hero=self.image.get_rect(center=self.hero.center)
     def Jump(self):
         """
@@ -146,11 +146,11 @@ class Hero():
             if(self.hero_jump==True or self.hero_jump_chek==1):
                 self.hero_jump_chek=1
                 if self.hero.centery>self.hero_jump_high and self.hero_jump_chek_up==False:
-                        self.hero.centery-=7.5
+                        self.hero.centery-=15
                         if self.hero.centery <= self.hero_jump_high:
                             self.hero_jump_chek_up=True
                 elif onRoad==False and self.hero_jump_chek_up==True:
-                    self.hero.centery+=7.5
+                    self.hero.centery+=15
                 elif onRoad==True:
                     #self.hero_jump=False
                     self.hero_jump_chek_up=False
@@ -160,11 +160,11 @@ class Hero():
             if (self.hero_jump == True or self.hero_jump_chek == 1):
                 self.hero_jump_chek = 1
                 if self.hero.centery < self.hero_jump_high and self.hero_jump_chek_up == False:
-                    self.hero.centery += 7.5
+                    self.hero.centery += 15
                     if self.hero.centery >= self.hero_jump_high:
                         self.hero_jump_chek_up = True
                 elif onRoad == False and self.hero_jump_chek_up == True:
-                    self.hero.centery -= 7.5
+                    self.hero.centery -= 15
                 elif onRoad == True:
                     # self.hero_jump=False
                     self.hero_jump_chek_up = False

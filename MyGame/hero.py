@@ -236,11 +236,11 @@ class Hero():
                 if (meters >= up_array[self.up_array_i][0] + 9 and meters <= up_array[self.up_array_i][1] + 10):
                     if (self.hero.centery > 40 + 100 * array[self.array_i][2]):
                         return -3
-                    elif (self.hero.centery > 40 + 100 * array[self.array_i][2] - 10):
+                    elif (self.hero.centery > 40 + 100 * array[self.array_i][2] - 30):
                         if (self.hero.centery <= 40 + 100 * array[self.array_i][2] and self.hero_up==True):
                             self.hero.centery = 40 + 100 * array[self.array_i][2]
                             return -2
-                        elif(self.hero.centery > 40 + 100 * array[self.array_i][2] and self.hero_up==False):
+                        elif(self.hero.centery >= 40 + 100 * array[self.array_i][2] and self.hero_up==False):
                             return -3
                     else:
                         return -1
@@ -255,11 +255,11 @@ class Hero():
                 if (meters>=array[self.array_i][0]+9 and meters<=array[self.array_i][1]+10):
                     if(self.hero.centery<760-100*array[self.array_i][2]):
                         return 0
-                    elif(self.hero.centery<760-100*array[self.array_i][2]+10):
+                    elif(self.hero.centery<760-100*array[self.array_i][2]+30):
                         if(self.hero.centery>=760-100*array[self.array_i][2]and self.hero_up==False):
                             self.hero.centery=760-100*array[self.array_i][2]
                             return 1
-                        elif(self.hero.centery<760-100*array[self.array_i][2]and self.hero_up==True):
+                        elif(self.hero.centery<=760-100*array[self.array_i][2]and self.hero_up==True):
                             return 0
                     else:
                         return -1

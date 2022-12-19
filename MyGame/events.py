@@ -37,6 +37,7 @@ def event(hero):
             if event.key==pygame.K_SPACE:
                 if hero.hero_sprite == "ship":
                     hero.hero_up=False
+                    Hero.onRoad=False
                     hero.ship_kef=1
                 if hero.hero_sprite=="deafolt":
                         hero.hero_jump=False
